@@ -17,10 +17,13 @@ Includes the following plugins:
 
     docker run --rm --user ${UID}:${GID} \
     -v /tmp/sharesound:/tmp/sharesound \
+    -v $HOME/music:/var/lib/mopidy/media \
     -p 6600:6600 -p 6680:6680 \
     sharktamer/docker-mopidy-snapcast
 
 Using the above settings, mopidy can be reached with mpd clients on port `6600` and Iris can be accessed from http://localhost:6680/iris.
+
+This image can also be dropped into [nolte/docker_compose-audiostation](https://github.com/nolte/docker_compose-audiostation) to include the above plugins.
 
 Plugins can be configured by setting the below environment variables (using docker's `-e` flag):
 
